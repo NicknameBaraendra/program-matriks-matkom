@@ -18,7 +18,7 @@ smooth = cv2.filter2D(image, -1, kernel_smooth)
 display_image('Smooth', smooth)
 
 # 2. Gaussian Blur
-gaussian_blur = cv2.GaussianBlur(image, (9, 9), 5)
+gaussian_blur = cv2.GaussianBlur(image, (15, 15), 5)
 display_image('Gaussian Blur', gaussian_blur)
 
 # 3. Sharpen
