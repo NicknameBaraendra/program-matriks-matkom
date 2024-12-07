@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Fungsi untuk menampilkan gambar
 def display_image(title, image):
     plt.figure(figsize=(6,6))
     plt.title(title)
@@ -10,11 +9,10 @@ def display_image(title, image):
     plt.axis('off')
     plt.show()
 
-# Membaca gambar
 image = cv2.imread('D:/tess/PY/orangrandom.jpeg')  
 display_image('Gambar Asli', image)
 
-# Smooth (Blurring)
+# Smooth
 kernel_smooth = np.ones((5,5), np.float32)/25
 smooth = cv2.filter2D(image, -1, kernel_smooth)
 display_image('Smooth', smooth)
@@ -28,7 +26,7 @@ kernel_sharpen = np.array([[0,-1,0], [-1,5,-1], [0,-1,0]])
 sharpen = cv2.filter2D(image, -1, kernel_sharpen)
 display_image('Sharpen', sharpen)
 
-# Mean Removal (High-pass filter)
+# Mean Removal
 kernel_mean_removal = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
 mean_removal = cv2.filter2D(image, -1, kernel_mean_removal)
 display_image('Mean Removal', mean_removal)
