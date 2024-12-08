@@ -9,7 +9,7 @@ def display_image(title, image):
     plt.axis('off')
     plt.show()
 
-image = cv2.imread('D:/tess/PY/orangrandom.jpeg')  
+image = cv2.imread('C:/Users/RYZEN/OneDrive/Pictures/testing/WhatsApp Image 2024-12-07 at 17.32.47_03df35bd.jpg')  
 display_image('Gambar Asli', image)
 
 # Smooth
@@ -18,7 +18,7 @@ smooth = cv2.filter2D(image, -1, kernel_smooth)
 display_image('Smooth', smooth)
 
 # Gaussian Blur
-gaussian_blur = cv2.GaussianBlur(image, (15,15), 5)
+gaussian_blur = cv2.GaussianBlur(image, (7,7), 5)
 display_image('Gaussian Blur', gaussian_blur)
 
 # Sharpen
